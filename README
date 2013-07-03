@@ -1,0 +1,11 @@
+spreadsheet.py combines python-excel (xlrd, xlwt) and openpyxl to allow a single set of commands for editing .xls and .xlsx files in Python.
+
+The commands for using this library can be found at the openpyxl site (http://pythonhosted.org/openpyxl/) with the only change being that openpyxl will be replaced with spreadsheet.
+
+e.g. openpyxl.load_workbook('test.xlsx')
+
+will be:
+spreadsheet.load_workbook('test.xlsx')
+
+and this will also work now:
+spreadsheet.load_workbook('test.xls')
