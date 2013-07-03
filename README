@@ -1,11 +1,30 @@
-spreadsheet.py combines python-excel (xlrd, xlwt) and openpyxl to allow a single set of commands for editing .xls and .xlsx files in Python.
+spreadsheet combines python-excel (xlrd, xlwt) and openpyxl to allow a single set of commands for editing .xls and .xlsx files in Python.
 
 The commands for using this library can be found at the openpyxl site (http://pythonhosted.org/openpyxl/) with the only change being that openpyxl will be replaced with spreadsheet.
 
-e.g. openpyxl.load_workbook('test.xlsx')
+Examples:
 
-will be:
-spreadsheet.load_workbook('test.xlsx')
+""" Convert xlsx to xls or vice verse """
+import spreadsheet
 
-and this will also work now:
-spreadsheet.load_workbook('test.xls')
+wb_xlsx = spreadsheet.load_workbook('demo1.xlsx')
+wb_xls  = spreadsheet.load_workbook('demo2.xls')
+
+wb_xlsx.save('demo1.xls')
+wb_xls.save('demo2.xlsx')
+
+
+
+""" Create a new spreadsheet and place the value 'Hello World' in cell A1 """
+import spreadsheet
+
+wb = spreadsheet.Workbook()
+sh = wb.get_active_sheet()
+sh.cell(row=0, column=0).value = 'Hello World'
+wb.save('demo3.xlsx')
+
+
+Installation:
+Download these files and place them in PythonXX/Lib/site-packages/spreadsheet
+
+Then it should work!
